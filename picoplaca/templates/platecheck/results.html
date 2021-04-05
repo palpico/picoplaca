@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="p-3 mb-2 bg-secondary text-white text-center">Pico y Placa {% trans "Check" %}</h2>
+  <br>
+  {% if request.session.g_result %}
+    <button type="button" class="btn btn-outline-dark btn-lg" disabled>Puede circular</button>
+  {% else %}
+    <button type="button" class="btn btn-outline-dark btn-lg" disabled>No circula</button>
+  {% endif %}
+{% endblock %}
