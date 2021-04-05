@@ -1,10 +1,14 @@
 from django.db.models import Model, CharField, TimeField, DateField
-from django.core.validators import RegexValidator
+
+# Create your models here.
+from simple_history.models import HistoricalRecords
+from django.core.validators import MinValueValidator, RegexValidator, MaxValueValidator, MinLengthValidator, \
+    MaxLengthValidator
 from django.urls import reverse
 from django.utils.translation import ugettext as _
 
 # plate validator
-plate = RegexValidator(r'^[a-zA-Z]{3}[0-9]{3,4}$',
+plate = RegexValidator(r'^(?:(?![dfDF])[a-zA-Z]){1}[a-zA-Z]{2}[0-9]{3,4}$',
                        _('Please check plate format AAA123 or AAA1234. First digit cant be D or F'))
 
 
