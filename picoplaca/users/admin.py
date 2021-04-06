@@ -2,8 +2,10 @@ from django.contrib import admin
 from django.contrib.auth import admin as auth_admin
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
-
 from picoplaca.users.forms import UserChangeForm, UserCreationForm
+from django.contrib.auth.decorators import login_required
+
+admin.site.login = login_required(admin.site.login)  # Protect admin from being bruteforeced
 
 User = get_user_model()
 
