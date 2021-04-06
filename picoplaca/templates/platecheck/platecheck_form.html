@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="p-3 mb-2 bg-secondary text-white text-center">Pico y Placa</h2>
+  <br>
+  <form class="form-horizontal form-control-lg" method="post" action="{{ request.path }}">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <button type="submit" class="btn btn-primary" name="action">{% trans "Check" %}</button>
+  </form>
+{% endblock %}
+{% block customjs %}
+  <script>
+    $(document).ready(function () {
+      $('#id_platecheck_date').datetimepicker({timepicker: false, format: 'Y-m-d'});
+      $('#id_platecheck_time').datetimepicker({datepicker: false, step: 30, format: 'H:i'});
+    });
+  </script>
+{% endblock %}

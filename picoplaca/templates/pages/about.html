@@ -1,1 +1,27 @@
 {% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+  <div class="alert alert-primary" role="alert">
+    To develop this application the past rules of the Pico&Placa were considered.
+    <br>
+    Additional information can be found at <a
+          href="http://www.amt.gob.ec/index.php/valores-a-pagar/29-servicios/pico-y-placa/40-controles-y-fiscalizacion-pico-y-placa.html"
+          class="alert-link">"Pico y Placa"</a>.
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-primary">{% trans "SCHEDULE" %}</li>
+    <li class="list-group-item">{% trans "In the morning" %}: 7:00 a.m. - 9:30 a.m.</li>
+    <li class="list-group-item">{% trans "In the afternoon" %}: 4:00 p.m. - 7:30 p.m.</li>
+  </ul>
+  <br>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-info">{% trans "RESTRICTIONS " %}(
+    {% trans "Vehicles whose last digit on the plate ends in" %} )</li>
+    <li class="list-group-item">{% trans "Monday" %}: 1 {% trans "and" %} 2</li>
+    <li class="list-group-item">{% trans "Tuesday" %}: 3 {% trans "and" %} 4</li>
+    <li class="list-group-item">{% trans "Wednesday" %}: 5 {% trans "and" %} 6</li>
+    <li class="list-group-item">{% trans "Thursday" %}: 7 {% trans "and" %} 8</li>
+    <li class="list-group-item">{% trans "Friday" %}: 9 {% trans "and" %} 0</li>
+  </ul>
+{% endblock %}
