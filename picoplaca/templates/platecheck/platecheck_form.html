@@ -3,9 +3,9 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <h2 class="p-3 mb-2 bg-secondary text-white">{% trans "" %}</h2>
+  <h2 class="p-3 mb-2 bg-secondary text-white text-center">Pico y Placa</h2>
   <br>
-  <form class="form-horizontal" method="post" action="{{ request.path }}">
+  <form class="form-horizontal form-control-lg" method="post" action="{{ request.path }}">
     {% csrf_token %}
     {{ form | crispy }}
     <button type="submit" class="btn btn-primary" name="action">{% trans "Check" %}</button>
