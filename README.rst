@@ -11,7 +11,7 @@ Basic Commands
 --------------
 
 
-Setting Up Your Users
+Starting containers
 ^^^^^^^^^^^^^^^^^^^^^
 
 * To start developer environment, use this command::
@@ -31,13 +31,10 @@ Setting Up Your Users
 
     $ python manage.py createsuperuser
 
+Running tests
+^^^^^^^^^^^^^^^^^^^^^
 
-Deployment
-----------
+* To run tests this command::
 
-The following details how to deploy this application.
-
-
-
-
+    $docker-compose -f developer.yml run --rm django pytest
 
