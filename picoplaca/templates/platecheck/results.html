@@ -13,9 +13,9 @@
       <br>
       <p>{% trans "Information for " %}{{ request.session.g_date }}, {{ request.session.g_time }}</p>
       {% if request.session.g_result %}
-        <img class="img-fluid" src="{% static "/images/platecheck/yes_drive.png" %}" alt="">
+        <img class="img-fluid" src="{% static "images/platecheck/yes_drive.png" %}" alt="">
       {% else %}
-        <img class="img-fluid" src="{% static "/images/platecheck/no_drive.png" %}" alt="">
+        <img class="img-fluid" src="{% static "images/platecheck/no_drive.png" %}" alt="">
       {% endif %}
     </div>
   {% endif %}
